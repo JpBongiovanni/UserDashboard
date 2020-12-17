@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
+    <title>Admin Dashboard</title>
 </head>
 <body>
-    <h1>TEST</h1>
+    <h1>Test App | Dashboard | Profile | Log Off</h1>
+    {% for User in users %}
+        {{User.id}}
+        {{User.first_name}} {{User.last_name}}
+        {{User.email}}
+        {{User.created_at}}
+    {% endfor %}
 </body>
 </html>
