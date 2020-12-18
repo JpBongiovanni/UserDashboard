@@ -7,11 +7,26 @@
 </head>
 <body>
     <h1>Test App | Dashboard | Profile | Log Off</h1>
-    {% for User in users %}
-        {{User.id}}
-        {{User.first_name}} {{User.last_name}}
-        {{User.email}}
-        {{User.created_at}}
-    {% endfor %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Date Joined</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for User in users %}
+            <tr>
+                <td>{{User.id}}</td>
+                <td>{{User.first_name}} {{User.last_name}}</td>
+                <td>{{User.email}}</td>
+                <td>{{User.created_at}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
