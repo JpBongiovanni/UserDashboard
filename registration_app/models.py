@@ -1,6 +1,8 @@
 from django.db import models
 import re
 import bcrypt
+from datetime import datetime
+
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 
 
@@ -53,5 +55,7 @@ class User(models.Model):
     email = models.EmailField(unique=True)
     description = models.CharField(max_length=600)
     password = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add = True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now = True, null=True, blank=True)
 
     objects = UserManager()

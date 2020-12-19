@@ -1,5 +1,8 @@
 from django.db import models
 from registration_app.models import *
+import re
+import bcrypt
+from datetime import datetime
 
 
 
